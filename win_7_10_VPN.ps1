@@ -1,21 +1,21 @@
 ########## Copy PreVPN file 
 Write-Host "User: "$env:UserName
 Write-Host " "
-######### Узнаём где файл и где рабочий стол
+######### РЈР·РЅР°С‘Рј РіРґРµ С„Р°Р№Р» Рё РіРґРµ СЂР°Р±РѕС‡РёР№ СЃС‚РѕР»
 $dest_path="C:\Users\"+$env:UserName+"\AppData\Roaming\Microsoft\Network\Connections\Pbk"
 $rab=Get-ItemProperty -path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
 $desktop=$rab.Desktop
 Write-Host $desktop
 Write-Host " "
-######### Копируем нужные для нас файлы
-Copy-Item -Path "\\укажите путь source-path\rasphone.pbk" -Destination $dest_path
-Copy-Item -Path "\\укажите путь source-path\TeamViewer_Setup.exe" -Destination $desktop
+######### РљРѕРїРёСЂСѓРµРј РЅСѓР¶РЅС‹Рµ РґР»СЏ РЅР°СЃ С„Р°Р№Р»С‹
+Copy-Item -Path "\\СѓРєР°Р¶РёС‚Рµ РїСѓС‚СЊ source-path\rasphone.pbk" -Destination $dest_path
+Copy-Item -Path "\\СѓРєР°Р¶РёС‚Рµ РїСѓС‚СЊ source-path\TeamViewer_Setup.exe" -Destination $desktop
 Write-Host "Copied TeamViewer_Setup.exe"
 Write-Host " "
-Copy-Item -Path "\\укажите путь source-path\VPN-Windows7-подключение.jpg" -Destination $desktop
-Write-Host "Copied VPN- Windows 7-подключение.jpg"
+Copy-Item -Path "\\СѓРєР°Р¶РёС‚Рµ РїСѓС‚СЊ source-path\VPN-Windows7-РїРѕРґРєР»СЋС‡РµРЅРёРµ.jpg" -Destination $desktop
+Write-Host "Copied VPN- Windows 7-РїРѕРґРєР»СЋС‡РµРЅРёРµ.jpg"
 Write-Host " "
-write-host "VPN --- Введите логин и пароль, PreSharedKey L2TP, создайте ярлык подключения"
+write-host "VPN --- Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ, PreSharedKey L2TP, СЃРѕР·РґР°Р№С‚Рµ СЏСЂР»С‹Рє РїРѕРґРєР»СЋС‡РµРЅРёСЏ"
 [void][System.Console]::ReadKey($true)
 
 ######### Proxy OFF
