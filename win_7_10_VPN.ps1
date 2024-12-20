@@ -7,15 +7,13 @@ $rab=Get-ItemProperty -path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Exp
 $desktop=$rab.Desktop
 Write-Host $desktop
 Write-Host " "
-######### Копируем нужные для нас файлы
+######### Copy files
 Copy-Item -Path "\\укажите путь source-path\rasphone.pbk" -Destination $dest_path
 Copy-Item -Path "\\укажите путь source-path\TeamViewer_Setup.exe" -Destination $desktop
 Write-Host "Copied TeamViewer_Setup.exe"
 Write-Host " "
-Copy-Item -Path "\\укажите путь source-path\VPN-Windows7-подключение.jpg" -Destination $desktop
-Write-Host "Copied VPN- Windows 7-подключение.jpg"
 Write-Host " "
-write-host "VPN --- Введите логин и пароль, PreSharedKey L2TP, создайте ярлык подключения"
+write-host "VPN --- Enter login and password, PreSharedKey L2TP"
 [void][System.Console]::ReadKey($true)
 
 ######### Proxy OFF
